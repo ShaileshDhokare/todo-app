@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {title: 'Todo - Homepage'}) %>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="container mt-3">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% todos.forEach((todo) => { %>
+          <tr>
+            <td><%= todo.id %></td>
+            <td><%= todo.title %></td>
+            <td><%= todo.status %></td>
+            <td><%= todo.priority %></td>
+            <td><%= todo.due_date %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
